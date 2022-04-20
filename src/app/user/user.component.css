@@ -11,10 +11,7 @@
   .nav-items app-nav{
     width: 50%;
   }
-  
-  .nav-items:hover{
-  
-  }
+
   .s-parent {
     display: flex;
     flex-direction: column;
@@ -135,7 +132,7 @@
     transition: opacity 1s ease-in-out;
   }
   
-  /* TO FIX */
+  
   /* USAGE USING DIRECTIVE */
   .link-p:hover{
     opacity: 0.5;
