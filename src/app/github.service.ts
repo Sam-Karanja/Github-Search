@@ -27,7 +27,7 @@ export class GithubService {
       this.http
         .get<Users>(`${environment.base_url}/${userName}`,{
           headers:{
-            Authorization:`token ${environment.access_token}`
+            // Authorization:`token ${environment.access_token}`
 
           }
           
@@ -56,7 +56,7 @@ export class GithubService {
     const promise = new Promise<void>((resolve, reject) => {
       this.http
         .get<Repo[]>(`${environment.base_url}/${userName}/repos`,{headers:{
-          Authorization: `token ${environment.access_token}`
+          // Authorization: `token ${environment.access_token}`
         }})
         .subscribe({
           next: (res: any) => {
@@ -86,7 +86,7 @@ export class GithubService {
     const promise =  new Promise<void>((resolve,reject)=>{
         this.http.get<Repo[]>(`${environment.base_repo_url}${name}*`,{
           headers: {
-            Authorization: `token ${environment.access_token}`,
+            // Authorization: `token ${environment.access_token}`,
           },
 
         }).subscribe({
