@@ -43,6 +43,7 @@
       padding-top: 4%;
       padding-right: 3%;
       padding-left: 3%;
+      background-color: #2f4f4f;
     }
     .title h1 {
       font-family: "Montserrat", sans-serif;
@@ -142,6 +143,7 @@
   .repos {
     display: flex;
     flex-wrap: wrap;
+    background-color: red;
   }
   .repos-cont {
     width: 30%;
@@ -151,6 +153,7 @@
     flex-direction: column;
     gap: 15px;
     font-size: 1.1rem;
+    background-color: blue;
   }
   .sz {
     display: flex;
@@ -162,7 +165,7 @@
   }
   .s-z span,
   .lang span {
-    color: whitesmoke;
+    /* color: whitesmoke; */
     opacity: 0.9;
   }
   

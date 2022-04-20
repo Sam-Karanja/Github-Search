@@ -1,4 +1,6 @@
-
+*{
+  background-color: #2f2f2f;
+}
 .nav-items{
     display: flex;
     padding: 10px;
@@ -129,14 +131,14 @@
     height: 100%;
     width: 100%;
     background-color: #000;
-    opacity:0;
+    opacity: 0;
     transition: opacity 1s ease-in-out;
   }
   
   /* TO FIX */
   /* USAGE USING DIRECTIVE */
   .link-p:hover{
-    opacity: 0.9;
+    opacity: 0.5;
   
   }
   .link-p .link{
