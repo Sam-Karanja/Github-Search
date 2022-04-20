@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {faStar,faCode,faEye,faLink,faFolder,faArrowLeft} from '@fortawesome/free-solid-svg-icons';
-import { GithubService } from 'src/app/services/github.service';
-import { Repo } from '../../Repo';
+import { GithubService } from '../github.service';
+import { Repo } from '../Repo';
 
 @Component({
   selector: 'app-repos',

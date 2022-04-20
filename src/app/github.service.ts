@@ -2,15 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { User } from '../User';
-import { Repo } from '../Repo';
+import { Users } from '../app/Users';
+import { Repo } from '../app/Repo';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GithubService {
 
-  user!: User;
+  user!: Users;
   errorMessage!: string;
   repoName!: string;
   userRepos!: Repo[];
@@ -25,7 +25,7 @@ export class GithubService {
   getUser(userName: string) {
     const promise = new Promise<void>((resolve, reject) => {
       this.http
-        .get<User>(`${environment.base_url}/${userName}`,{
+        .get<Users>(`${environment.base_url}/${userName}`,{
           headers:{
             Authorization:`token ${environment.access_token}`
 

@@ -7,37 +7,31 @@ import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
-import { UserComponent } from './components/user/user.component';
-import { ReposComponent } from './components/repos/repos.component';
-import { NoUserComponent } from './components/no-user/no-user.component';
-import { JoinPipe } from './pipes/join.pipe';
+import { UserComponent } from './user/user.component'
+import { ReposComponent } from './repos/repos.component';
+import { NoUserComponent } from './no-user/no-user.component';
+import { JoinPipe } from './join.pipe';
 import { Router, RouterModule } from '@angular/router';
-import { TruncatePipe } from './pipes/truncate.pipe';
-import { NavComponent } from './components/nav/nav.component';
-import { HoverDirective } from './directives/hover.directive';
+import { TruncatePipe } from './truncate.pipe';
+import { NavComponent } from './nav/nav.component';
+import { HoverDirective } from './hover.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    ReposComponent,
     NoUserComponent,
     JoinPipe,
     TruncatePipe,
     NavComponent,
     HoverDirective,
-
+    UserComponent,
+    ReposComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([
-      {path: 'user', component: UserComponent},
-      {path: 'repos', component: ReposComponent},
-      {path: '', redirectTo:'/user',pathMatch: 'full'},
-      {path: '**', component:NoUserComponent}
-    ])
+    RouterModule,
     FormsModule,
     HttpClientModule,
     FontAwesomeModule

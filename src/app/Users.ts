@@ -1,4 +1,4 @@
-export class User {
+export class Users {
     login!:string;
     name!:string;
     followers!: number;

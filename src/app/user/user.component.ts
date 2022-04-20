@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GithubService } from '../../services/github.service';
+import { GithubService } from '../github.service';
 import {faStar,faCode,faEye,faSearch,faFolder,faLink} from '@fortawesome/free-solid-svg-icons';
-import { Repo } from '../../Repo';
-import { User } from '../../User';
+import { Repo } from '../Repo';
+import { Users } from '../Users';
 
 
 @Component({
@@ -13,10 +13,10 @@ import { User } from '../../User';
 export class UserComponent implements OnInit {
 
 
-  userDetails!: User;
+  userDetails!: Users;
   topics!:string;
   repos!: Repo[];
-  defaultUser!:User;
+  defaultUser!:Users;
 
   // icons
   faEye = faEye;
