@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubService } from '../github.service';
-import {faStar,faCode,faEye,faSearch,faFolder,faLink} from '@fortawesome/free-solid-svg-icons';
+import {
+  faStar,
+  faCode,
+  faEye,
+  faSearch,
+  faFolder,
+  faLink,
+} from '@fortawesome/free-solid-svg-icons';
 import { Repo } from '../Repo';
 import { Users } from '../Users';
-
 
 @Component({
   selector: 'app-user',
@@ -11,12 +17,11 @@ import { Users } from '../Users';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-
-
-  userDetails!: Users;
-  topics!:string;
+  //  userDetails!: Users;
+  userDetails!:any
+  topics!: string;
   repos!: Repo[];
-  defaultUser!:Users;
+  defaultUser!: Users;
 
   // icons
   faEye = faEye;
@@ -26,40 +31,41 @@ export class UserComponent implements OnInit {
   faFolder = faFolder;
   faLink = faLink;
 
-  constructor(private _githubService: GithubService) {
-
+  constructor(private _githubService: GithubService) {}
+  ngOnInit() {
+    this.getUserDetails('Sam-Karanja');
 
   }
-  ngOnInit(){
-     this.getUserDetails('Sam-Karanja')
-  }
 
-
-
-  getUserDetails(username:string){
-    this._githubService.getUser(username).then(
-
-      (success)=>{
-        this.userDetails = this._githubService.user;
-        console.log(success)
+  getUserDetails(username: string) {
+    this._githubService.getUser(username).subscribe(
+       (response)=> {
+        console.log(response);
+         this.userDetails =response
       },
-      (error)=>{
-        alert("User not found");
-        console.log(error)
+       (error) =>{
+        console.log(error);
       }
     );
+    // this._githubService.getUser(username).then(
 
-    this._githubService.getUserRepos(username).then(
-      ()=>{
-        this.repos = this._githubService.userRepos;
-      },
-      (error)=>{
-        console.log(error)
-      }
-    )
-   
+    //   (success)=>{
+    //     this.userDetails = this._githubService.user;
+    //     console.log(success)
+    //   },
+    //   (error)=>{
+    //     alert("User not found");
+    //     console.log(error)
+    //   }
+    // );
+
+    //   this._githubService.getUserRepos(username).then(
+    //     ()=>{
+    //       this.repos = this._githubService.userRepos;
+    //     },
+    //     (error)=>{
+    //       console.log(error)
+    //     }
+    //   )
   }
-
-
-
 }

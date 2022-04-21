@@ -10,7 +10,7 @@ import { Repo } from '../Repo';
 })
 export class ReposComponent implements OnInit {
  
-  repos!: Repo[];
+  repos!: any;
 
 
   // icons
@@ -23,22 +23,31 @@ export class ReposComponent implements OnInit {
 
   constructor(private _githubService:GithubService) { }
 
-  ngOnInit(): void {
-    this.getRepos("fight")
+  ngOnInit() {
+    this.getRepos("Sam-Karanja")
   }
 
 
 
-  getRepos(repoName:string){
-      this._githubService.searchRepos(repoName).then(
-        ()=>{
-             this.repos = this._githubService.repos;
-             console.log(this.repos);
-        },
-        (error)=>{
-          alert("An error occured please try again");
-        }
-      )
+  getRepos(name:string){
+
+    this._githubService.getUserRepos(name).subscribe(
+       (response)=> {
+        console.log(response);
+      },
+       (error)=> {
+        console.log(error);
+      }
+    );
+      // this._githubService.searchRepos(repoName).then(
+      //   ()=>{
+      //        this.repos = this._githubService.repos;
+      //        console.log(this.repos);
+      //   },
+      //   (error)=>{
+      //     alert("An error occured please try again");
+      //   }
+      // )
 
   }
 
